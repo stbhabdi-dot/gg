@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffe6f2, #ffb3d9);
+            color: #333;
+            margin: 0;
+            padding: 50px;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff1493;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            position: relative; /* For positioning the No button */
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        #noButton {
+            background-color: #ccc; /* Gray for No to make it less appealing */
+        }
+        .hearts {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Would you be my Valentine?</h1>
+    <p>I've been thinking about you a lot, and I'd love to make this Valentine's Day special together. What do you say?</p>
+    <button onclick="alert('Yay! Let\'s celebrate! 💖')">Yes!</button>
+    <button id="noButton">No</button>
+    <div class="hearts">💖 ❤️ 💕</div>
+    <!-- Customize: Replace with your name, add an image like <img src="your-photo-url.jpg" alt="Us"> -->
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        
+        // Function to move the button randomly
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - 100); // Random X position
+            const y = Math.random() * (window.innerHeight - 50); // Random Y position
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+            noButton.style.position = 'absolute';
+        }
+        
+        // Move on hover
+        noButton.addEventListener('mouseover', moveButton);
+        
+        // Move on click (extra fun)
+        noButton.addEventListener('click', moveButton);
+    </script>
+</body>
+</html>
